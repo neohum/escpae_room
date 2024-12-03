@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class ArticleController extends Controller
 {
     public function index()
@@ -11,4 +12,11 @@ class ArticleController extends Controller
         $articles = \App\Models\Article::all();
         return view('articles.index', compact('articles'));
     }
+
+    // public function logout()
+
+    // {
+    //     auth()->logout();
+    //     return redirect('/');
+    // }
 }
