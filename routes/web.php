@@ -3,7 +3,7 @@
 use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 
-Route::resource('/escape_room', ArticleController::class);
+Route::resource('/', ArticleController::class);
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -12,5 +12,7 @@ Route::view('dashboard', 'dashboard')
 Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
+
+Route::resource('/', ArticleController::class);
 
 require __DIR__.'/auth.php';

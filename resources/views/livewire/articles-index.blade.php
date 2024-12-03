@@ -1,4 +1,5 @@
 <div>
+   
     <div class="grid grid-cols-3 gap-4">
         @foreach($articles as $article)
         <div class="p-4 bg-white rounded shadow">

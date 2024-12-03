@@ -17,9 +17,40 @@
 <body class="text-gray-800 bg-gray-100">
 
     <nav class="p-4 text-white bg-blue-600">
-        <div class="container mx-auto">
-            <h1 class="text-2xl font-bold">Escpae_room Project</h1>
+        <div class="container flex mx-auto ">
+            <div>
+            <h1 class="text-2xl font-bold">
+                <a href="{{ url('/') }}">
+                    Escpae_room Project
+                </a>
+            </h1>
+            </div>
+            <div class="flex justify-end flex-1 -mx-3">
+            @auth
+            <a href="{{ url('/dashboard') }}"
+                class="rounded-md px-3 py-2  text-white ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                설정화면
+            </a>
+            
+            @else
+            <a href="{{ route('login') }}"
+                class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                로그인
+            </a>
+
+            @if (Route::has('register'))
+            <a href="{{ route('register') }}"
+                class="rounded-md px-3 py-2 text-white ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                사용자 등록
+            </a>
+            @endif
+            @endauth
+            </div>
         </div>
+        <div>
+
+        </div>
+
     </nav>
 
     <div class="container p-4 mx-auto mt-4">
